@@ -11,7 +11,7 @@ echo "PYTHONPATH=$PYTHONPATH"
 which python
 python --version
 
-cd ..
+cd ../..
 export SD_UI_PATH=`pwd`/ui
 cd stable-diffusion
 
