@@ -2,6 +2,8 @@
 
 printf "\n\nStarting the server!\n\n"
 
+sleep 99999999
+
 SD_PATH=`pwd`
 
 export PYTORCH_ENABLE_MPS_FALLBACK=1
