@@ -4,6 +4,8 @@ printf "\n\nStarting the server!\n\n"
 
 SD_PATH=`pwd`
 
+export INSTALL_ENV_DIR="$(pwd)/installer_files/env"
+export PATH="$(pwd)/installer_files/env/bin:$PATH"
 export PYTORCH_ENABLE_MPS_FALLBACK=1
 export PYTHONPATH="$INSTALL_ENV_DIR/lib/python3.8/site-packages"
 echo "PYTHONPATH=$PYTHONPATH"
