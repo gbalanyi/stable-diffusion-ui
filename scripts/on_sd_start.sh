@@ -6,7 +6,7 @@ cp sd-ui-files/scripts/bootstrap.sh scripts/
 cp sd-ui-files/scripts/check_modules.py scripts/
 cp sd-ui-files/scripts/get_config.py scripts/
 cp sd-ui-files/scripts/config.yaml.sample scripts/
-     
+
 
 source ./scripts/functions.sh
 
@@ -48,6 +48,6 @@ if [ -e "ldm" ]; then mv ldm ldm-old; fi
 
 cd ..
 # Download the required packages
-python scripts/check_modules.py --launch-uvicorn
+python scripts/check_modules.py
 
-read -p "Press any key to continue"
+printf "\n\nEasy Diffusion installation complete!\n\n"
