@@ -21,7 +21,7 @@ if [ -f "scripts/get_config.py" ]; then
 fi
 
 if [ "$update_branch" == "" ]; then
-    export update_branch="main"
+    export update_branch="docker"
 fi
 
 if [ -f "scripts/install_status.txt" ] && [ `grep -c sd_ui_git_cloned scripts/install_status.txt` -gt "0" ]; then
@@ -40,7 +40,7 @@ else
     printf "\n\nDownloading Easy Diffusion..\n\n"
     printf "Using the $update_branch channel\n\n"
 
-    if git clone -b "$update_branch" https://github.com/easydiffusion/easydiffusion.git sd-ui-files ; then
+    if git clone -b "$update_branch" https://github.com/gbalanyi/stable-diffusion-ui.git sd-ui-files ; then
         echo sd_ui_git_cloned >> scripts/install_status.txt
     else
         fail "git clone failed"
