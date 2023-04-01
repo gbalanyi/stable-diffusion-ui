@@ -57,5 +57,6 @@ cp sd-ui-files/scripts/config.yaml.sample scripts/
 cp sd-ui-files/scripts/start.sh .
 cp sd-ui-files/scripts/developer_console.sh .
 cp sd-ui-files/scripts/functions.sh scripts/
+cp sd-ui-files/scripts/docker_run.sh scripts/
 
 exec ./scripts/on_sd_start.sh
