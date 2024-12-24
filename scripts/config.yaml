@@ -1,0 +1,5 @@
+net:
+  listen_port: 9000
+  listen_to_network: true
+ui:
+  open_browser_on_start: false

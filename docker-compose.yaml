@@ -1,0 +1,18 @@
+services:
+  easydiffusion:
+    build:
+      context: .
+    image: easydiffusion:latest
+    container_name: easydiffusion
+    restart: no
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./models:/easy-diffusion/models
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
