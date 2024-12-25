@@ -21,7 +21,7 @@ os_name = platform.system()
 
 modules_to_check = {
     "torch": ("1.11.0", "1.13.1", "2.0.0", "2.0.1"),
-    "torchvision": ("0.12.0", "0.14.1", "0.15.1", "0.15.2"),
+    "torchvision": "0.15",
     "setuptools": "69.5.1",
     # "sdkit": "2.0.15.6", # checked later
     # "diffusers": "0.21.4", # checked later
@@ -83,6 +83,9 @@ def install(module_name: str, module_version: str):
         install_cmd += f" --index-url {index_url}"
     if module_name == "sdkit" and version("sdkit") is not None:
         install_cmd += " -q"
+
+    if module_name in ("torch"):
+        install_cmd = f"python -m pip install --upgrade https://developer.download.nvidia.com/compute/redist/jp/v511/pytorch/torch-2.0.0+nv23.05-cp38-cp38-linux_aarch64.whl"
 
     print(">", install_cmd)
     os.system(install_cmd)
